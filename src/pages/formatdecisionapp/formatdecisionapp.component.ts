@@ -25,6 +25,7 @@ export class FormatdecisionappComponent {
     'Wie viel praktische Anwendung braucht es, um deine Lerninhalte gut zu vermitteln?',
     'Wie umfangreich sind deine Lerninhalte?',
     'Wie flexibel müssen deine Lerninhalte im Kurs angepasst und aktualisiert werden können? ',
+    'Sprichst du mit deinen Lerninhalten eine breite Zielgruppe an und wie oft werden sie benötigt?',
     'Abschluss',
   ];
 
@@ -131,34 +132,17 @@ export class FormatdecisionappComponent {
   stepSevenOptions = [
     {
       label:
-        'Die Inhalte verändern sich laufend und aktuelle Themen und Diskussionen müssen regelmäßig miteinbezogen werden.',
+        'Die Inhalte richten sich an eine kleine Zielgruppe, die nur gelegentlich geschult wird.',
       points: 6,
     },
     {
       label:
-        'Ein Teil der Inhalte bzw. die Grundlagen sind festgelegt, aber es gibt Raum für aktuelle und regelmäßige Anpassungen.',
+        'Ein Teil der Inhalte sind für eine bestimmte Zielgruppe, die Grundlagen aber für viele und werden regelmäßig genutzt.',
       points: 3,
     },
     {
       label:
-        'Die Inhalte sind eher feststehend und Grundlegendes verändert sich nicht.',
-      points: 1,
-    },
-  ];
-  stepEightOptions = [
-    {
-      label:
-        'Die Inhalte verändern sich laufend und aktuelle Themen und Diskussionen müssen regelmäßig miteinbezogen werden.',
-      points: 6,
-    },
-    {
-      label:
-        'Ein Teil der Inhalte bzw. die Grundlagen sind festgelegt, aber es gibt Raum für aktuelle und regelmäßige Anpassungen.',
-      points: 3,
-    },
-    {
-      label:
-        'Die Inhalte sind eher feststehend und Grundlegendes verändert sich nicht.',
+        'Die Inhalte sind für eine breite Zielgruppe und werden oft gebraucht',
       points: 1,
     },
   ];
@@ -259,10 +243,10 @@ export class FormatdecisionappComponent {
   totalPoints: number = 0;
 
   getTextForTotalPoints(): string {
-    if (this.totalPoints >= 22) {
-      return 'Für dein Thema bietet sich eine Veranstaltung an!'; // 36-22 Punkte
-    } else if (this.totalPoints >= 13) {
-      return 'Für dein Thema bietet sich eine Kombination aus einer  Veranstaltung und einem E-Learning an!'; // 21-13 Punkte
+    if (this.totalPoints >= 31) {
+      return 'Für dein Thema bietet sich eine Veranstaltung an!'; // 31-42 Punkte
+    } else if (this.totalPoints >= 17) {
+      return 'Für dein Thema bietet sich eine Kombination aus einer  Veranstaltung und einem E-Learning an!'; // 17-30 Punkte
     } else {
       return 'Für dein Thema bietet sich ein E-Learning an!';
     }
