@@ -1,0 +1,212 @@
+<div class="questiontitle">
+  {{ questions[stepper.selectedIndex] }}
+</div>
+
+<div class="steppercontainer">
+  <mat-horizontal-stepper [linear]="true" #stepper>
+    <!-- Step 1 -->
+    <mat-step [stepControl]="stepOneForm">
+      <form [formGroup]="stepOneForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(1, $event.value)"
+        >
+          <div *ngFor="let option of stepOneOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperNext [disabled]="!stepOneForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 2 -->
+    <mat-step [stepControl]="stepTwoForm">
+      <form [formGroup]="stepTwoForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(2, $event.value)"
+        >
+          <div *ngFor="let option of stepTwoOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext [disabled]="!stepTwoForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 3 -->
+    <mat-step [stepControl]="stepThreeForm">
+      <form [formGroup]="stepThreeForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(3, $event.value)"
+        >
+          <div *ngFor="let option of stepThreeOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext [disabled]="!stepThreeForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 4 -->
+    <mat-step [stepControl]="stepFourForm">
+      <form [formGroup]="stepFourForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(4, $event.value)"
+        >
+          <div *ngFor="let option of stepFourOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext [disabled]="!stepFourForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!-- Step 5 -->
+    <mat-step [stepControl]="stepFiveForm">
+      <form [formGroup]="stepFiveForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(5, $event.value)"
+        >
+          <div *ngFor="let option of stepFiveOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext [disabled]="!stepFiveForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+     <!-- Step 6 -->
+     <mat-step [stepControl]="stepFiveForm">
+      <form [formGroup]="stepFiveForm">
+        <ng-template matStepLabel></ng-template>
+        <mat-radio-group
+          formControlName="option"
+          (change)="updatePoints(6, $event.value)"
+        >
+          <div *ngFor="let option of stepFiveOptions" class="radio-option">
+            <mat-radio-button class="matradio" [value]="option.points">{{
+              option.label
+            }}</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button matStepperNext [disabled]="!stepFiveForm.valid">
+            Weiter
+          </button>
+        </div>
+      </form>
+    </mat-step>
+
+      <!-- Step 7 -->
+      <mat-step [stepControl]="stepEightForm">
+        <form [formGroup]="stepEightForm">
+          <ng-template matStepLabel></ng-template>
+          <mat-radio-group
+            formControlName="option"
+            (change)="updatePoints(7, $event.value)"
+          >
+            <div *ngFor="let option of stepEightOptions" class="radio-option">
+              <mat-radio-button class="matradio" [value]="option.points">{{
+                option.label
+              }}</mat-radio-button>
+            </div>
+          </mat-radio-group>
+
+          <div>
+            <button mat-button matStepperPrevious>Zurück</button>
+            <button mat-button matStepperNext [disabled]="!stepFiveForm.valid">
+              Weiter
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+       <!-- Step 7 -->
+      <mat-step [stepControl]="stepEightForm">
+        <form [formGroup]="stepEightForm">
+          <ng-template matStepLabel></ng-template>
+          <mat-radio-group
+            formControlName="option"
+            (change)="updatePoints(7, $event.value)"
+          >
+            <div *ngFor="let option of stepEightOptions" class="radio-option">
+              <mat-radio-button class="matradio" [value]="option.points">{{
+                option.label
+              }}</mat-radio-button>
+            </div>
+          </mat-radio-group>
+
+          <div>
+            <button mat-button matStepperPrevious>Zurück</button>
+            <button mat-button matStepperNext [disabled]="!stepFiveForm.valid">
+              Weiter
+            </button>
+          </div>
+        </form>
+      </mat-step>
+
+    <!-- Abschluss -->
+    <mat-step>
+      <ng-template matStepLabel>Ergebnis</ng-template>
+      <div class="result">
+        <p>Vielen Dank, dass du bei der Befragung teilgenommen hast!</p>
+        <p class="exp">{{ getTextForTotalPoints() }}</p>
+        <!-- Hier wird der Text je nach Punktzahl angezeigt -->
+        <div class="buttonsexit">
+          <button mat-button matStepperPrevious>Zurück</button>
+          <button mat-button (click)="stepper.reset()">Zurücksetzen</button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
