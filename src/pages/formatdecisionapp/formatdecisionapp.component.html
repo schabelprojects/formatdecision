@@ -153,7 +153,7 @@
         <ng-template matStepLabel></ng-template>
         <mat-radio-group
           formControlName="option"
-          (change)="updatePoints(6, $event.value)"
+          (change)="updatePoints(7, $event.value)"
         >
           <div *ngFor="let option of stepSevenOptions" class="radio-option">
             <mat-radio-button class="matradio" [value]="option.points">{{
@@ -175,7 +175,7 @@
     <mat-step>
       <ng-template matStepLabel>Ergebnis</ng-template>
       <div class="result">
-        <p>Vielen Dank, dass du bei der Befragung teilgenommen hast!</p>
+        <p>Vielen Dank, dass du teilgenommen hast!</p>
         <p class="exp">{{ getTextForTotalPoints() }}</p>
         <!-- Hier wird der Text je nach Punktzahl angezeigt -->
         <div class="buttonsexit">

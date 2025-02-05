@@ -20,7 +20,7 @@ export class FormatdecisionappComponent {
 
   questions = [
     'Wie sollen die Teilnehmenden das Lernangebot in ihren Alltag integrieren können?',
-    'Wie viel direkte Betreuung (Rückfragen, Hilfestellungen, Diskussionen etc.) durch dich ist erforderlich?',
+    'Wie viel direkte Betreuung (Rückfragen, Hilfestellungen, Diskussionen etc.) durch dich als Trainer:in ist erforderlich?',
     'Wie viel Vernetzung und Austausch zwischen den Teilnehmenden ist für dein Thema wichtig?',
     'Wie viel praktische Anwendung braucht es, um deine Lerninhalte gut zu vermitteln?',
     'Wie umfangreich sind deine Lerninhalte?',
@@ -48,13 +48,13 @@ export class FormatdecisionappComponent {
   stepTwoOptions = [
     {
       label:
-        'Zum Verständnis sollten die Teilnehmenden regelmäßig Fragen stellen und Feedback erhalten können.',
-      points: 6,
+        'Gelegentliche Unterstützung ist gewünscht, kombiniert mit selbstständigem Lernen.',
+      points: 3,
     },
     {
       label:
-        'Gelegentliche Unterstützung ist gewünscht, kombiniert mit selbstständigem Lernen.',
-      points: 3,
+        'Zum Verständnis sollten die Teilnehmenden regelmäßig Fragen stellen und Feedback erhalten können.',
+      points: 6,
     },
     {
       label:
@@ -65,18 +65,18 @@ export class FormatdecisionappComponent {
   stepThreeOptions = [
     {
       label:
-        'Die Teilnehmenden sollen regelmäßig in Gruppen arbeiten und Erfahrungen austauschen, um das Themenverständnis zu fördern.',
+        'Das Thema kann selbständig und unabhängig voneinander erarbeitet werden.',
+      points: 1,
+    },
+    {
+      label:
+        'Die Teilnehmenden sollen regelmäßig in Gruppen arbeiten und Erfahrungen austauschen, um das Themenverständnis zu fördern. ',
       points: 6,
     },
     {
       label:
-        'Gelegentliche Austauschphasen unterstützen das Lernen, sind aber nicht ständig notwendig.',
+        'Gelegentliche Austauschphasen unterstützen das Lernen, sind aber nicht ständig notwendig. ',
       points: 3,
-    },
-    {
-      label:
-        'Das Thema kann selbständig und unabhängig voneinander erarbeitet werden.',
-      points: 1,
     },
   ];
   stepFourOptions = [
@@ -86,25 +86,25 @@ export class FormatdecisionappComponent {
     },
     {
       label:
-        'Ein Teil der Inhalte können als reines Wissen vermittelt werden, hierauf aufbauend ist die praktische Anwendung wichtig.',
-      points: 3,
+        'Der Großteil der Lerninhalte soll durch Diskussionen und praktischen Anwendung erarbeitet werden.',
+      points: 1,
     },
     {
       label:
-        'Der Großteil der Lerninhalte soll durch Diskussionen und praktischen Anwendung erarbeitet werden.',
-      points: 1,
+        'Ein Teil der Inhalte können als reines Wissen vermittelt werden, hierauf aufbauend ist die praktische Anwendung wichtig',
+      points: 3,
     },
   ];
   stepFiveOptions = [
     {
       label:
-        'Die Inhalte sind komplex und für das Verständnis ist eine Praxisorientierung wichtig.',
-      points: 6,
+        'Die Inhalte sind ein Mix aus grundlegenden und anspruchsvolleren Themen.',
+      points: 3,
     },
     {
       label:
-        'Die Inhalte sind ein Mix aus grundlegenden und anspruchsvolleren Themen.',
-      points: 3,
+        'Die Inhalte sind komplex und für das Verständnis ist eine Praxisorientierung wichtig.',
+      points: 6,
     },
     {
       label:
@@ -115,8 +115,8 @@ export class FormatdecisionappComponent {
   stepSixOptions = [
     {
       label:
-        'Die Inhalte verändern sich laufend und aktuelle Themen und Diskussionen müssen regelmäßig miteinbezogen werden.',
-      points: 6,
+        'Die Inhalte sind eher feststehend und Grundlegendes verändert sich nicht.',
+      points: 1,
     },
     {
       label:
@@ -125,11 +125,16 @@ export class FormatdecisionappComponent {
     },
     {
       label:
-        'Die Inhalte sind eher feststehend und Grundlegendes verändert sich nicht.',
-      points: 1,
+        'Die Inhalte verändern sich laufend und aktuelle Themen und Diskussionen müssen regelmäßig miteinbezogen werden.',
+      points: 6,
     },
   ];
   stepSevenOptions = [
+    {
+      label:
+        'Die Inhalte sind für eine breite Zielgruppe und werden oft gebraucht.',
+      points: 1,
+    },
     {
       label:
         'Die Inhalte richten sich an eine kleine Zielgruppe, die nur gelegentlich geschult wird.',
@@ -139,11 +144,6 @@ export class FormatdecisionappComponent {
       label:
         'Ein Teil der Inhalte sind für eine bestimmte Zielgruppe, die Grundlagen aber für viele und werden regelmäßig genutzt.',
       points: 3,
-    },
-    {
-      label:
-        'Die Inhalte sind für eine breite Zielgruppe und werden oft gebraucht',
-      points: 1,
     },
   ];
 
@@ -189,7 +189,6 @@ export class FormatdecisionappComponent {
     stepFive: 0,
     stepSix: 0,
     stepSeven: 0,
-    stepEight: 0,
   };
 
   // Berechne die Gesamtpunktzahl
@@ -201,8 +200,7 @@ export class FormatdecisionappComponent {
       this.selectedPoints.stepFour +
       this.selectedPoints.stepFive +
       this.selectedPoints.stepSix +
-      this.selectedPoints.stepSeven +
-      this.selectedPoints.stepEight
+      this.selectedPoints.stepSeven
     );
   }
 
@@ -231,9 +229,6 @@ export class FormatdecisionappComponent {
       case 7:
         this.selectedPoints.stepSeven = points;
         break;
-      case 8:
-        this.selectedPoints.stepEight = points;
-        break;
     }
 
     // Berechne die Gesamtpunktzahl und aktualisiere die Anzeige
@@ -244,9 +239,9 @@ export class FormatdecisionappComponent {
 
   getTextForTotalPoints(): string {
     if (this.totalPoints >= 31) {
-      return 'Für dein Thema bietet sich eine Veranstaltung an!'; // 31-42 Punkte
+      return 'Für dein Thema bietet sich eine Veranstaltung an!'; // 42-31 Punkte
     } else if (this.totalPoints >= 17) {
-      return 'Für dein Thema bietet sich eine Kombination aus einer  Veranstaltung und einem E-Learning an!'; // 17-30 Punkte
+      return 'Für dein Thema bietet sich eine Kombination aus einer Veranstaltung und einem E-Learning (Blendend Learning) an!'; // 30-17 Punkte
     } else {
       return 'Für dein Thema bietet sich ein E-Learning an!';
     }
